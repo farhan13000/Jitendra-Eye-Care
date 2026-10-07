@@ -6,7 +6,7 @@
  */
 
 /** WhatsApp number in international format, digits only (country code + number). */
-export const WHATSAPP_NUMBER = '919876543210';
+export const WHATSAPP_NUMBER = '919044663154';
 
 export const SITE = {
   name: 'Jitendra Eye Care',
@@ -15,25 +15,25 @@ export const SITE = {
   description:
     'Premium eyewear, advanced lenses and trusted eye-care services — all under one roof.',
   // Used in SEO titles, e.g. "Premium Frames, Lenses & Eye Care in <city>". Leave empty to omit.
-  city: '',
+  city: 'Badlapur',
   url: 'https://www.example.com', // your live domain (used for Open Graph URLs)
   ogImage:
     'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=1200&h=630&fit=crop&q=75',
 
-  phone: '+91 98765 43210', // displayed
-  phoneHref: '+919876543210', // used for tel: links
-  whatsappDisplay: '+91 98765 43210',
+  phone: '+91 90446 63154', // displayed
+  phoneHref: '+919044663154', // used for tel: links
+  whatsappDisplay: '+91 90446 63154',
   email: 'hello@example.com',
 
   address: {
-    line1: 'Shop No. 12, Main Market Road',
-    line2: 'Near City Centre',
-    city: 'Your City',
-    state: 'State',
-    pin: '000000',
+    line1: 'Ajay Watch House, Basement',
+    line2: 'In front of Saltanat Bahadur Inter College',
+    city: 'Badlapur, Jaunpur',
+    state: 'Uttar Pradesh',
+    pin: '222125',
   },
   // Text Google Maps should search for (shop name + address works best).
-  mapsQuery: 'Jitendra Eye Care, Main Market Road',
+  mapsQuery: 'Ajay Watch House, Badlapur, Jaunpur, Uttar Pradesh 222125',
 
   hours: [
     { days: 'Monday – Saturday', time: '10:00 AM – 8:00 PM' },

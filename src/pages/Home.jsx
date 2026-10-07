@@ -243,7 +243,7 @@ export default function Home() {
           <SectionHeading
             id="gallery-title"
             eyebrow="Gallery"
-            title="Inside our studio"
+            title="Our work in pictures"
             action={
               <Link to="/gallery" className="text-link">
                 View full gallery <Icon name="arrowRight" size={14} />

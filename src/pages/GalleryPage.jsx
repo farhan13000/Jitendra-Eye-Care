@@ -11,11 +11,11 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Seo title="Gallery" description={`A look inside ${SITE.name}: our store, eyewear collection, team and eye-care studio.`} />
+      <Seo title="Gallery" description={`A look at ${SITE.name} in action: eye check-ups, diagnostic equipment and eye camps.`} />
       <PageHeader
         eyebrow="Gallery"
-        title="A look inside our studio"
-        lead="Our store, our collection, our team, and the happy faces we get to see every day."
+        title="Our work in pictures"
+        lead="Eye check-ups, modern diagnostic equipment and community eye camps."
         crumbs={[{ label: 'Gallery' }]}
       />
       <section className="section section--catalog">
