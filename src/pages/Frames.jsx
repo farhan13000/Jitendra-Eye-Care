@@ -8,6 +8,8 @@ import { frames } from '../data/frames';
 import { categories, getCategory } from '../data/categories';
 import { frameText, matches } from '../utils/search';
 import { whatsappLink } from '../utils/whatsapp';
+import { formatPrice } from '../utils/format';
+import { SITE } from '../config/site';
 
 const GENDERS = ['Men', 'Women', 'Unisex', 'Kids'];
 const RIMS = ['Full Rim', 'Half Rim', 'Rimless'];
@@ -77,6 +79,7 @@ export default function Frames() {
         eyebrow="The Collection"
         title={activeCategory ? activeCategory.name : 'Frames & Sunglasses'}
         lead="Browse our curated collection, then enquire on WhatsApp or visit the store to try them on."
+        priceFrom={formatPrice(SITE.startingPrice)}
         crumbs={[{ label: 'Frames' }]}
       />
 

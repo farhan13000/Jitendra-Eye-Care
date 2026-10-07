@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Img from './Img';
 
 /** Inner-page header with breadcrumbs, H1 and optional background image. */
-export default function PageHeader({ eyebrow, title, lead, crumbs = [], image, children }) {
+export default function PageHeader({ eyebrow, title, lead, crumbs = [], image, priceFrom, children }) {
   return (
     <header className={`page-header ${image ? 'page-header--image' : ''}`}>
       {image && (
@@ -24,6 +24,11 @@ export default function PageHeader({ eyebrow, title, lead, crumbs = [], image, c
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1 className="page-title">{title}</h1>
         {lead && <p className="lead">{lead}</p>}
+        {priceFrom && (
+          <p className="price-from">
+            Starting from <strong>{priceFrom}</strong>
+          </p>
+        )}
         {children}
       </div>
     </header>

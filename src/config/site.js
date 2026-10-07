@@ -54,6 +54,9 @@ export const SITE = {
 
   announcement: 'Comprehensive eye checkups available every day — book your slot on WhatsApp.',
   foundedYear: 2008,
+
+  // "Starting from" price (in ₹) shown on the Frames and Lenses pages and on each lens card.
+  startingPrice: 1000,
 };
 
 export const fullAddress = () => {

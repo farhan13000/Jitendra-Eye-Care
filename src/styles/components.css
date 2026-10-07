@@ -1145,6 +1145,16 @@
   font-size: 0.95rem;
 }
 
+.lens-card__price {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.lens-card__price strong {
+  color: var(--gold-text);
+  font-size: 1rem;
+}
+
 .lens-card__desc {
   color: var(--muted);
   font-size: 0.93rem;
@@ -1795,6 +1805,28 @@
 
 .page-header .lead {
   margin-top: 18px;
+}
+
+.price-from {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.price-from strong {
+  color: var(--gold-text);
+}
+
+.page-header--image .price-from {
+  color: #dfe5ee;
+}
+
+.page-header--image .price-from strong {
+  color: var(--gold-light);
 }
 
 .page-header > .container > .btn,

@@ -1,4 +1,6 @@
 import { lensEnquiryLink } from '../utils/whatsapp';
+import { formatPrice } from '../utils/format';
+import { SITE } from '../config/site';
 import Img from './Img';
 import Icon from './Icon';
 
@@ -15,6 +17,9 @@ export default function LensCard({ lens, highlighted = false, headingLevel: H = 
       <div className="lens-card__body">
         <H className="lens-card__title">{lens.name}</H>
         <p className="lens-card__summary">{lens.summary}</p>
+        <p className="lens-card__price">
+          Starting from <strong>{formatPrice(SITE.startingPrice)}</strong>
+        </p>
         <p className="lens-card__desc">{lens.description}</p>
         <ul className="check-list">
           {lens.benefits.map((b) => (

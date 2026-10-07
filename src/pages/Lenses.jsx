@@ -9,6 +9,8 @@ import Icon from '../components/Icon';
 import { lenses, lensNeeds, getLens } from '../data/lenses';
 import { whatsappLink, MESSAGES } from '../utils/whatsapp';
 import { unsplash } from '../utils/image';
+import { formatPrice } from '../utils/format';
+import { SITE } from '../config/site';
 
 export default function Lenses() {
   const [need, setNeed] = useState(null);
@@ -31,6 +33,7 @@ export default function Lenses() {
         eyebrow="Lens Solutions"
         title="The Right Lens Makes All the Difference"
         lead="Your frame is what people see. Your lenses are how you see. We help you choose both, wisely."
+        priceFrom={formatPrice(SITE.startingPrice)}
         crumbs={[{ label: 'Lenses' }]}
         image={unsplash('1614715838608-dd527c46231d')}
       />
