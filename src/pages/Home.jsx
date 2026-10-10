@@ -101,7 +101,7 @@ export default function Home() {
             id="categories-title"
             eyebrow="Shop by Category"
             title="Every shape, every style"
-            lead="From featherlight rimless titanium to bold acetate and UV-protective sunglasses."
+            lead="From featherlight rimless styles to bold full-rim and elegant cat-eye frames."
           />
           <div className="category-grid">
             {categories.map((c, i) => (
@@ -185,15 +185,16 @@ export default function Home() {
         <div className="container split">
           <Reveal className="split__media">
             <Img
-              src={unsplash('1612349317150-e413f6a5b16d')}
-              alt="Our optometrist in the consultation room"
+              src="/images/team/doctor.jpeg"
+              alt="Our eye-care expert in the examination room"
               ratio={4 / 5}
               widths={[480, 720, 900]}
               sizes="(max-width: 900px) 100vw, 45vw"
+              style={{ objectPosition: '50% 35%' }}
             />
             <div className="split__note">
-              <strong>{new Date().getFullYear() - SITE.foundedYear}+ years</strong>
-              <span>caring for the city&apos;s eyes</span>
+              <strong>{SITE.experienceYears}+ years</strong>
+              <span>of eye-care experience</span>
             </div>
           </Reveal>
           <div className="split__body">

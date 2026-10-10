@@ -84,7 +84,7 @@ export default function SearchDialog({ open, onClose }) {
                   <li key={f.id}>
                     <Link to={`/frames/${f.slug}`} className="search-item" onClick={close}>
                       <span className="search-item__thumb">
-                        <Img src={f.images[0]} alt="" ratio={1} widths={[96]} sizes="48px" />
+                        <Img src={f.images[0]} alt="" ratio={1} widths={[96]} sizes="48px" className={f.fit === 'contain' ? 'img--contain' : undefined} />
                       </span>
                       <span className="search-item__text">
                         <strong>{f.name}</strong>

@@ -21,7 +21,7 @@ const columns = [
     title: 'Products',
     links: [
       ['Frames', '/frames'],
-      ['Sunglasses', '/frames?category=sunglasses'],
+      ['Cat-Eye Frames', '/frames?category=cat-eye'],
       ['Lenses', '/lenses'],
       ['Contact Lenses', '/services#contact-lens-consultation'],
     ],
@@ -47,7 +47,7 @@ export default function Footer() {
             <Logo light />
             <p>
               Professional eye care, premium eyewear and honest guidance. Helping you see clearly and look your
-              best since {SITE.foundedYear}.
+              best.
             </p>
             <div className="footer__social">
               <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">

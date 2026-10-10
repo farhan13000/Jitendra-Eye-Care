@@ -46,14 +46,14 @@ export const SITE = {
     google: 'https://www.google.com/maps',
   },
 
-  // Headline numbers shown in the hero. Years in business is calculated from foundedYear.
+  // Headline numbers shown in the hero, after the years of experience.
   stats: [
     { value: '500+', label: 'Frames in store' },
     { value: '4.9★', label: 'Google rating' },
   ],
 
   announcement: 'Comprehensive eye checkups available every day — book your slot on WhatsApp.',
-  foundedYear: 2008,
+  experienceYears: 5, // shown as "5+ years"
 
   // "Starting from" price (in ₹) shown on the Frames and Lenses pages and on each lens card.
   startingPrice: 1000,

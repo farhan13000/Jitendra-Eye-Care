@@ -49,7 +49,7 @@ function Product({ product }) {
     ['Material', product.material],
     ['Shape', product.shape],
     ['Size', product.size],
-  ];
+  ].filter(([, v]) => v);
 
   return (
     <>
@@ -91,6 +91,7 @@ function Product({ product }) {
                   widths={[600, 900, 1200]}
                   sizes="(max-width: 900px) 100vw, 55vw"
                   priority
+                  className={product.fit === 'contain' ? 'img--contain' : undefined}
                   style={zoom ? { transformOrigin: `${zoom.x}% ${zoom.y}%` } : undefined}
                 />
                 <span className="pdp__zoom-hint" aria-hidden="true">
@@ -107,7 +108,7 @@ function Product({ product }) {
                       aria-label={`Show image ${i + 1}`}
                       aria-pressed={i === active}
                     >
-                      <Img src={src} alt="" ratio={1} widths={[160]} sizes="80px" />
+                      <Img src={src} alt="" ratio={1} widths={[160]} sizes="80px" className={product.fit === 'contain' ? 'img--contain' : undefined} />
                     </button>
                   ))}
                 </div>

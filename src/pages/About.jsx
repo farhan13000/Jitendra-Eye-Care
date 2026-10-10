@@ -26,7 +26,7 @@ const team = [
 ];
 
 export default function About() {
-  const years = new Date().getFullYear() - SITE.foundedYear;
+  const years = SITE.experienceYears;
   return (
     <>
       <Seo
@@ -46,7 +46,7 @@ export default function About() {
           <Reveal className="split__media">
             <Img src={unsplash('1556742049-0cfed4f6a45d')} alt="Our team helping a customer in store" ratio={4 / 5} widths={[480, 720, 900]} sizes="(max-width: 900px) 100vw, 45vw" />
             <div className="split__note">
-              <strong>Since {SITE.foundedYear}</strong>
+              <strong>{years}+ years</strong>
               <span>serving our community</span>
             </div>
           </Reveal>

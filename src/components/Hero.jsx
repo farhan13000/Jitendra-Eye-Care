@@ -11,8 +11,6 @@ const heroImage = unsplash('1566492031773-4f4e44671857');
 const spotlight = getFrameBySlug('classic-black');
 
 export default function Hero() {
-  const years = new Date().getFullYear() - SITE.foundedYear;
-
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="container hero__grid">
@@ -49,8 +47,8 @@ export default function Hero() {
 
           <dl className="hero__stats">
             <div>
-              <dt>{years}+</dt>
-              <dd>Years of trusted care</dd>
+              <dt>{SITE.experienceYears}+</dt>
+              <dd>Years of experience</dd>
             </div>
             {SITE.stats.map((s) => (
               <div key={s.label}>
@@ -76,7 +74,15 @@ export default function Hero() {
           {spotlight && (
             <Link to={`/frames/${spotlight.slug}`} className="hero__card">
               <span className="hero__card-img">
-                <Img src={spotlight.images[0]} alt="" ratio={1} widths={[160]} sizes="80px" priority />
+                <Img
+                  src={spotlight.images[0]}
+                  alt=""
+                  ratio={1}
+                  widths={[160]}
+                  sizes="80px"
+                  priority
+                  className={spotlight.fit === 'contain' ? 'img--contain' : undefined}
+                />
               </span>
               <span className="hero__card-text">
                 <small>Bestseller</small>

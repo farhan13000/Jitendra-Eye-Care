@@ -16,9 +16,16 @@ export default function ProductCard({ product, priority = false }) {
   return (
     <article className="product-card">
       <Link to={url} className="product-card__media" tabIndex={-1} aria-hidden="true">
-        <Img src={product.images[0]} alt="" ratio={4 / 5} widths={[360, 540, 720]} priority={priority} />
+        <Img
+          src={product.images[0]}
+          alt=""
+          ratio={4 / 5}
+          widths={[360, 540, 720]}
+          priority={priority}
+          className={product.fit === 'contain' ? 'img--contain' : undefined}
+        />
         {product.images[1] && (
-          <Img src={product.images[1]} alt="" ratio={4 / 5} widths={[360, 540, 720]} className="product-card__alt" />
+          <Img src={product.images[1]} alt="" ratio={4 / 5} widths={[360, 540, 720]} className={`product-card__alt ${product.fit === 'contain' ? 'img--contain' : ''}`} />
         )}
         {badge && <span className="badge">{badge}</span>}
       </Link>

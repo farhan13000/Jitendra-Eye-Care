@@ -20,7 +20,7 @@ npm run preview    # preview the production build
 | Shop name, phone, email, address, hours | `src/config/site.js` → `SITE` |
 | Google Maps location | `SITE.mapsQuery` (shop name + address as you'd type it into Google Maps) |
 | City for SEO titles | `SITE.city` (e.g. `'Jaipur'` gives "Eyeglass Frames & Sunglasses in Jaipur") |
-| Hero numbers (frames in store, rating) | `SITE.stats`; years in business come from `SITE.foundedYear` |
+| Hero numbers (frames in store, rating) | `SITE.stats`; years of experience come from `SITE.experienceYears` |
 | Social links | `SITE.social` |
 | Live domain (for Open Graph links) | `SITE.url` |
 | Testimonials | `src/data/testimonials.js` (currently **placeholders**; replace with real reviews) |

@@ -14,10 +14,9 @@ import { SITE } from '../config/site';
 const GENDERS = ['Men', 'Women', 'Unisex', 'Kids'];
 const RIMS = ['Full Rim', 'Half Rim', 'Rimless'];
 const PRICES = [
-  { id: 'u2000', label: 'Under ₹2,000', test: (p) => p < 2000 },
-  { id: '2000-3000', label: '₹2,000 – ₹3,000', test: (p) => p >= 2000 && p <= 3000 },
-  { id: '3000-4000', label: '₹3,000 – ₹4,000', test: (p) => p > 3000 && p <= 4000 },
-  { id: 'o4000', label: 'Above ₹4,000', test: (p) => p > 4000 },
+  { id: 'u1500', label: 'Under ₹1,500', test: (p) => p < 1500 },
+  { id: '1500-2000', label: '₹1,500 – ₹2,000', test: (p) => p >= 1500 && p <= 2000 },
+  { id: 'o2000', label: 'Above ₹2,000', test: (p) => p > 2000 },
 ];
 const SORTS = [
   { id: 'featured', label: 'Featured' },
@@ -72,12 +71,12 @@ export default function Frames() {
   return (
     <>
       <Seo
-        title={activeCategory ? `${activeCategory.name} | Eyeglass Frames` : inCity('Eyeglass Frames & Sunglasses')}
-        description="Browse premium full rim, half rim, rimless, metal, acetate, kids frames and sunglasses. View details and enquire instantly on WhatsApp."
+        title={activeCategory ? `${activeCategory.name} | Eyeglass Frames` : inCity('Eyeglass Frames')}
+        description="Browse full rim, half rim, rimless and cat-eye frames. View details and enquire instantly on WhatsApp."
       />
       <PageHeader
         eyebrow="The Collection"
-        title={activeCategory ? activeCategory.name : 'Frames & Sunglasses'}
+        title={activeCategory ? activeCategory.name : 'Our Frames'}
         lead="Browse our curated collection, then enquire on WhatsApp or visit the store to try them on."
         priceFrom={formatPrice(SITE.startingPrice)}
         crumbs={[{ label: 'Frames' }]}

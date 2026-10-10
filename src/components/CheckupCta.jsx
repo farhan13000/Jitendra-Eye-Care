@@ -1,6 +1,5 @@
 import { whatsappLink, MESSAGES } from '../utils/whatsapp';
 import { SITE } from '../config/site';
-import { unsplash } from '../utils/image';
 import Img from './Img';
 import Icon from './Icon';
 import Reveal from './Reveal';
@@ -13,8 +12,8 @@ export default function CheckupCta() {
         <Reveal className="checkup-cta">
           <div className="checkup-cta__media">
             <Img
-              src={unsplash('1631217868264-e5b90bb7e133')}
-              alt="Optometrist explaining eye test results to a patient"
+              src="/images/gallery/eye-care-39.jpg"
+              alt="Our optometrist checking a patient's vision with a trial frame"
               ratio={4 / 3}
               widths={[480, 720, 960]}
               sizes="(max-width: 900px) 100vw, 45vw"
