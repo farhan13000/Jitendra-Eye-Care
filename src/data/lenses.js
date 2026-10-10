@@ -81,6 +81,48 @@ export const lenses = [
   },
 ];
 
+/**
+ * Lens brands we stock, shown on the Lenses page and the homepage.
+ * `logo` is optional: put the file in public/images/brands/. Without one,
+ * the brand name is shown as a clean wordmark instead.
+ */
+export const lensBrands = [
+  {
+    name: 'ZEISS',
+    origin: 'Germany',
+    logo: '/images/brands/zeiss.svg',
+    summary: 'Premium German precision optics for sharp, comfortable vision.',
+    ranges: ['Single vision', 'Progressive', 'Blue light'],
+  },
+  {
+    name: 'Essilor',
+    origin: 'France',
+    logo: '/images/brands/essilor.png',
+    summary: 'World-leading lenses with Crizal coating for fewer reflections, scratches and smudges.',
+    ranges: ['Crizal coating', 'Varilux', 'Eyezen'],
+  },
+  {
+    name: 'Stellest',
+    origin: 'By Essilor',
+    summary: 'Specialised lenses that help slow down short-sightedness (myopia) in children.',
+    ranges: ['For kids', 'Myopia control'],
+  },
+  {
+    name: 'VISTA',
+    summary: 'Quality lenses for clear, comfortable everyday vision.',
+  },
+  {
+    name: 'Ash',
+    summary: 'Reliable, value-for-money lenses for everyday wear.',
+  },
+];
+
+/** "ZEISS, Essilor, VISTA & Ash" */
+export const lensBrandNames = lensBrands
+  .map((b) => b.name)
+  .join(', ')
+  .replace(/, ([^,]*)$/, ' & $1');
+
 /** Simple lens finder: lifestyle need -> recommended lens slugs. */
 export const lensNeeds = [
   { id: 'screens', label: 'I spend hours on screens', recommend: ['blue-light', 'anti-reflective'] },

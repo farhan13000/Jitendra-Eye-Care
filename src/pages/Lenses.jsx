@@ -6,8 +6,8 @@ import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
 import CheckupCta from '../components/CheckupCta';
 import Icon from '../components/Icon';
-import { lenses, lensNeeds, getLens } from '../data/lenses';
-import { whatsappLink, MESSAGES } from '../utils/whatsapp';
+import { lenses, lensNeeds, getLens, lensBrands, lensBrandNames } from '../data/lenses';
+import { whatsappLink, brandEnquiryLink, MESSAGES } from '../utils/whatsapp';
 import { unsplash } from '../utils/image';
 import { formatPrice } from '../utils/format';
 import { SITE } from '../config/site';
@@ -32,11 +32,59 @@ export default function Lenses() {
       <PageHeader
         eyebrow="Lens Solutions"
         title="The Right Lens Makes All the Difference"
-        lead="Your frame is what people see. Your lenses are how you see. We help you choose both, wisely."
+        lead={`Your frame is what people see. Your lenses are how you see. Genuine ${lensBrandNames} lenses available.`}
         priceFrom={formatPrice(SITE.startingPrice)}
         crumbs={[{ label: 'Lenses' }]}
         image={unsplash('1614715838608-dd527c46231d')}
       />
+
+      {/* Lens brands */}
+      <section className="section section--tight" aria-labelledby="brands-title">
+        <div className="container">
+          <SectionHeading
+            id="brands-title"
+            eyebrow="Brands Available"
+            title="Genuine branded lenses"
+            lead={`We stock original ${lensBrandNames} lenses, fitted to your exact prescription.`}
+          />
+          <div className="brand-grid">
+            {lensBrands.map((b, i) => (
+              <Reveal as="article" key={b.name} className="brand-card" delay={i * 70}>
+                <div className="brand-card__logo">
+                  {b.logo ? (
+                    <img src={b.logo} alt={`${b.name} logo`} loading="lazy" />
+                  ) : (
+                    <span className="brand-card__wordmark">{b.name}</span>
+                  )}
+                </div>
+                <div className="brand-card__body">
+                  <h3 className="brand-card__name">
+                    {b.name} <span>Lenses</span>
+                  </h3>
+                  {b.origin && <p className="brand-card__origin">{b.origin}</p>}
+                  <p className="brand-card__summary">{b.summary}</p>
+                  {b.ranges && (
+                    <ul className="brand-card__ranges" aria-label={`${b.name} options`}>
+                      {b.ranges.map((r) => (
+                        <li key={r}>{r}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <a
+                    href={brandEnquiryLink(b)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn--outline btn--sm"
+                    aria-label={`Enquire about ${b.name} lenses on WhatsApp`}
+                  >
+                    <Icon name="whatsapp" size={16} /> Enquire
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Lens finder */}
       <section className="section section--tight" id="lens-finder" aria-labelledby="finder-title">

@@ -15,7 +15,7 @@ import Img from '../components/Img';
 import Icon from '../components/Icon';
 import { featuredFrames, frames } from '../data/frames';
 import { categories } from '../data/categories';
-import { lenses } from '../data/lenses';
+import { lenses, lensBrands, lensBrandNames } from '../data/lenses';
 import { services } from '../data/services';
 import { gallery } from '../data/gallery';
 import { lensEnquiryLink } from '../utils/whatsapp';
@@ -121,7 +121,7 @@ export default function Home() {
             light
             eyebrow="Lens Solutions"
             title="The Right Lens Makes All the Difference"
-            lead="Precision lenses and coatings matched to your prescription and the way you live."
+            lead={`Precision lenses and coatings matched to your prescription. Genuine ${lensBrandNames} lenses available.`}
             action={
               <Link to="/lenses" className="text-link text-link--light">
                 Explore all lenses <Icon name="arrowRight" size={14} />
@@ -154,6 +154,14 @@ export default function Home() {
               </Link>
             </Reveal>
           </div>
+          <Link to="/lenses" className="brand-strip" aria-label={`Lens brands available: ${lensBrandNames}`}>
+            <span className="brand-strip__label">Brands available</span>
+            {lensBrands.map((b) => (
+              <span key={b.name} className="brand-strip__item">
+                {b.logo ? <img src={b.logo} alt="" loading="lazy" /> : <span>{b.name}</span>}
+              </span>
+            ))}
+          </Link>
         </div>
       </section>
 

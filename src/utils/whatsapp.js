@@ -33,6 +33,13 @@ export function generateWhatsAppLink(product, { intent = 'details', color } = {}
   return whatsappLink(lines.join('\n'));
 }
 
+export const brandEnquiryLink = (brand) =>
+  whatsappLink(
+    `Hello, I would like to know more about ${brand.name} lenses.
+
+Please share the options and pricing for my prescription.`
+  );
+
 export const lensEnquiryLink = (lens) =>
   whatsappLink(
     `Hello, I would like to know more about ${lens.name} lenses.\n\nPlease share the options, pricing and suitability for my prescription.`

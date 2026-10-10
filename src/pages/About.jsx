@@ -18,11 +18,14 @@ const trust = [
   { icon: 'smile', title: 'Customer Satisfaction', text: 'Free adjustments and friendly after-care, long after you buy.' },
 ];
 
-/** Placeholder team. Replace names, roles and photos with your own. */
+/** Our team. Add more people by adding objects (photos go in public/images/team/). */
 const team = [
-  { name: 'Jitendra', role: 'Founder & Senior Optometrist', image: unsplash('1612349317150-e413f6a5b16d') },
-  { name: 'Dr. Meera', role: 'Consultant Optometrist', image: unsplash('1559839734-2b71ea197ec2') },
-  { name: 'Neha', role: 'Frame Stylist & Lens Advisor', image: unsplash('1594824476967-48c8b964273f') },
+  {
+    name: 'Our Eye-Care Expert',
+    role: `${SITE.experienceYears}+ years of experience`,
+    image: '/images/team/doctor.jpeg',
+    position: '50% 35%',
+  },
 ];
 
 export default function About() {
@@ -108,10 +111,17 @@ export default function About() {
       <section className="section section--alt" aria-labelledby="team-title">
         <div className="container">
           <SectionHeading id="team-title" eyebrow="Our Team" title="The people behind your perfect pair" />
-          <div className="team-grid">
+          <div className={`team-grid ${team.length === 1 ? 'team-grid--single' : ''}`}>
             {team.map((m, i) => (
               <Reveal as="figure" key={m.name} className="team-card" delay={i * 80}>
-                <Img src={m.image} alt={`${m.name}, ${m.role}`} ratio={4 / 5} widths={[360, 540, 720]} sizes="(max-width: 640px) 100vw, 33vw" />
+                <Img
+                  src={m.image}
+                  alt={`${m.name}, ${m.role}`}
+                  ratio={4 / 5}
+                  widths={[360, 540, 720]}
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  style={m.position ? { objectPosition: m.position } : undefined}
+                />
                 <figcaption>
                   <strong>{m.name}</strong>
                   <span>{m.role}</span>

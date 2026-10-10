@@ -986,6 +986,11 @@
   }
 }
 
+.team-grid--single {
+  grid-template-columns: minmax(0, 380px);
+  justify-content: center;
+}
+
 .team-card .img {
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
@@ -1143,4 +1148,168 @@
 
 .not-found .lead {
   margin-inline: auto;
+}
+
+/* ==========================================================================
+   LENS BRANDS
+   ========================================================================== */
+.brand-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 560px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .brand-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1140px) {
+  .brand-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.brand-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+
+.brand-card__logo {
+  display: grid;
+  place-items: center;
+  height: 140px;
+  padding: 24px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-card__logo img {
+  max-width: 80%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.brand-card__wordmark {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.brand-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+
+.brand-card__name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.brand-card__name span {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.brand-card__origin {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.brand-card__summary {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.brand-card__ranges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 2px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.brand-card__ranges li {
+  padding: 3px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.brand-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Compact logo row (homepage lens section) */
+.brand-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.brand-strip__label {
+  margin-right: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.brand-strip__item {
+  display: grid;
+  place-items: center;
+  height: 56px;
+  min-width: 120px;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.brand-strip__item img {
+  max-height: 40px;
+  max-width: 110px;
+  object-fit: contain;
+}
+
+.brand-strip__item span {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
 }
